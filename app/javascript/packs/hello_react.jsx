@@ -5,6 +5,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import '@shopify/polaris/styles.css';
+import Appli from '../components/appli'
+import {AppProvider} from '@shopify/polaris'
 
 const Hello = props => (
   <div>Hello {props.name}!</div>
@@ -20,7 +23,11 @@ Hello.propTypes = {
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello name="React" />,
+
+    <AppProvider>
+      <Hello name="Thomas" />,
+      <Appli />
+    </AppProvider>,
     document.body.appendChild(document.createElement('div')),
   )
 })
